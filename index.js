@@ -29,6 +29,9 @@ function getFinals() {
     return finalsArray;
 };
 
+// Code from testing using .filter
+// const finalsArray = fifaData.filter( e => fifaData[e]["Stage"}.includes("Semi-finals"))
+
 
 console.log(getFinals());
 
@@ -41,6 +44,8 @@ function getYears(callback) {
     }
     return years;
 };
+
+// const result = words.filter(word => word.length > 6);   <<<< Example >>>>
 
 console.log(getYears(getFinals()));
 
