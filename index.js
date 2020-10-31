@@ -23,7 +23,7 @@ console.log(fifaData[850]["Away Team Name"]);
 function getFinals() {
     const finalsArray = [];
     for (let i = 0; i < fifaData.length; i++){
-        if (fifaData[i]["Stage"].includes("finals")){
+        if (fifaData[i]["Stage"].includes("Semi-finals")){
             finalsArray.push(fifaData[i])};
     }
     return finalsArray;
