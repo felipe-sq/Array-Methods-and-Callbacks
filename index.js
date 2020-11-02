@@ -66,7 +66,9 @@ function getWinners(callback) {
             winners.push(e["Home Team Name"]);
         } else if (e["Home Team Goals"] < e["Away Team Goals"]){
             winners.push(e["Away Team Name"]);
-        }
+        } else if (e["Win conditions"] !== ""){
+            winners.push(e["Win conditions"]);
+        };
     });
     return winners;
 };
@@ -81,10 +83,10 @@ Parameters:
  */
 
 function getWinnersByYear(cbWinners, cbYears) {
-    let winnerStrings = [];
-    // console.log(cbWinners, cbYears);
-    /* code here */
-    return `In ${cbYears[e]}, ${cbWinners[e]} wond the world cup!`;
+    let winnerString = cbWinners.map((name, i) => ({name, "years": cbYears[i]}));
+    // console.log(winnerString);
+    winnerString.map(e => console.log(`In ${e.years}, ${e.name} won the world cup!`));
+    // return winnerString;
 };
 
 getWinnersByYear(getWinners(getFinals()), getYears(getFinals()));
