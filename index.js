@@ -106,11 +106,16 @@ function getAverageGoals() {
     let avgAwayGoals = fifaData.reduce(function (total, awayteam) {
         return total + awayteam["Away Team Goals"];
     }, 0); 
-    console.log(avgHomeGoals);
-    console.log(avgAwayGoals);
+
+    const homeGoals = avgHomeGoals/avgHomeGoals.length;
+    const awayGoals = avgAwayGoals/avgAwayGoals.length;
+    console.log(homeGoals);
+    console.log(awayGoals);
 };
+// Code still needs more work. Prior code iteration did not return an average as the numbers were too high (the math was wrong).
 
 getAverageGoals();
+
 
 /// STRETCH 🥅 //`
 
