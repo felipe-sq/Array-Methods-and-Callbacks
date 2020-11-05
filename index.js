@@ -67,11 +67,18 @@ function getWinners(callback) {
         } else if (e["Home Team Goals"] < e["Away Team Goals"]){
             winners.push(e["Away Team Name"]);
         } else if (e["Win conditions"] !== ""){
-            winners.push(e["Win conditions"]);
+            let index = e["Win conditions"].indexOf(' ');
+            winners.push(e["Win conditions"].slice(0, index) );
         };
     });
     return winners;
 };
+
+//Example code used to work through re-writing code for this task:
+//let condition = "italy won on a penalty"  <<<--- the array
+//let index = e["Win conditions"].indexOf(' ');
+//winners.push(e["Win conditions"].slice(0, index) );
+
 
 console.log(getWinners(getFinals()));
 
@@ -105,7 +112,7 @@ function getAverageGoals() {
 
 getAverageGoals();
 
-/// STRETCH 🥅 //
+/// STRETCH 🥅 //`
 
 /* Stretch 1: Create a function called `getCountryWins` that takes the parameters `data` and `team initials` and returns the number of world cup wins that country has had. 
 
